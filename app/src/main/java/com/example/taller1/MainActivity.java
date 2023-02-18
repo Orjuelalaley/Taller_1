@@ -9,6 +9,7 @@ import com.example.taller1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    //JEJEJE
     private ActivityMainBinding binding;
     private int contador = 0;
     @Override
