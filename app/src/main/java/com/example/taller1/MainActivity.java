@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,15 +20,18 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.BtnJuego.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                contador++; // Aumentar el contador
-                actualizarTextoBoton(); // Actualizar el texto del botón
-            }
+        binding.BtnJuego.setOnClickListener(view -> {
+            contador++; // Aumentar el contador
+            actualizarTextoBoton(); // Actualizar el texto del botón
         });
     }
+    @SuppressLint("SetTextI18n")
     private void actualizarTextoBoton() {
-        binding.Info.setText("Presionado " + contador + " veces");
+        if (contador == 1)
+            binding.Info.setText("Presionado " + contador + " vez.");
+        else if (contador > 1){
+            binding.Info.setText("Presionado " + contador + " veces.");
+        }
+
     }
 }
