@@ -4,34 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
+import com.example.taller1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnEmpezarJuego;
-    Button btnMostrarPaises;
-
+    private ActivityMainBinding binding;
+    private int contador = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnEmpezarJuego = (Button) findViewById(R.id.btnEmpezarJuego);
-        btnMostrarPaises = (Button) findViewById(R.id.btnMostrarPaises);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        btnEmpezarJuego.setOnClickListener(new View.OnClickListener() {
+        binding.BtnJuego.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
+                contador++; // Aumentar el contador
+                actualizarTextoBoton(); // Actualizar el texto del botón
             }
         });
-
-
-        btnMostrarPaises.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+    }
+    private void actualizarTextoBoton() {
+        binding.Info.setText("Presionado " + contador + " veces");
     }
 }
