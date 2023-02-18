@@ -4,27 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="true"
-    android:background="@color/grey"
-    android:gravity="center"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Juego"
-        android:id="@+id/BtnJuego"
-        android:textSize="30sp"
-        />
-    <TextView
-        android:id="@+id/Info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/BtnJuego"
-        android:textSize="20sp"
-        android:textStyle="italic">
-    </TextView>
+        android:id="@+id/btnEmpezarJuego"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
+        android:onClick="empezarJuego"
+        android:backgroundTint="#0000FF"
+        android:text="JUEGO"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        tools:ignore="MissingConstraints"
+        android:layout_centerInParent="true"
+        tools:layout_editor_absoluteY="200dp" />
 
+    <Button
+        android:id="@+id/btnMostrarPaises"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/btnEmpezarJuego"
+        android:layout_centerInParent="true"
+        android:onClick="mostrarPaisses"
+        android:backgroundTint="#008000"
+        android:text="PAISES"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="200dp" />
 
 </RelativeLayout>
