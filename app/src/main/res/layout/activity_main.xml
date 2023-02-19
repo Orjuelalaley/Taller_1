@@ -4,34 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnEmpezarJuego"
         android:layout_width="340dp"
         android:layout_height="80dp"
-        android:onClick="empezarJuego"
-        android:backgroundTint="#0000FF"
+        android:layout_centerInParent="true"
+        android:onClick="StartGame"
         android:text="JUEGO"
         android:textAlignment="center"
         android:textSize="15sp"
+        app:icon="@drawable/game_controller"
+        app:iconSize="60dp"
+        app:iconTint="@null"
         tools:ignore="MissingConstraints"
-        android:layout_centerInParent="true"
         tools:layout_editor_absoluteY="200dp" />
-
+    <TextView
+        android:id="@+id/info_ultima_vez_juego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEmpezarJuego"
+        android:layout_alignStart="@+id/btnEmpezarJuego"
+        android:layout_centerHorizontal="true"
+        android:text="info_ultima vez."
+        android:textStyle="italic">
+    </TextView>
+    <TextView
+        android:id="@+id/InfoPulsado_juego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_ultima_vez_juego"
+        android:layout_alignStart="@+id/btnEmpezarJuego"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Info_pulsado."
+        android:textStyle="italic">
+    </TextView>
+    <Space
+        android:id="@+id/space_between_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/InfoPulsado_juego"
+        android:layout_centerHorizontal="true"
+        />
     <Button
         android:id="@+id/btnMostrarPaises"
+        app:icon="@drawable/tierra"
+        app:iconSize="60dp"
+        app:iconTint="@null"
         android:layout_width="340dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
-        android:layout_below="@+id/btnEmpezarJuego"
+        android:layout_below="@+id/space_between_buttons"
         android:layout_centerInParent="true"
-        android:onClick="mostrarPaisses"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#008000"
+        android:onClick="mostrarPaisses"
         android:text="PAISES"
         android:textAlignment="center"
         android:textSize="15sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/info_ultima_vez_paises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnMostrarPaises"
+        android:layout_alignStart="@+id/btnMostrarPaises"
+        android:layout_centerHorizontal="true"
+        android:text="info_ultima vez."
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/InfoPulsado_paises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_ultima_vez_paises"
+        android:layout_alignStart="@+id/btnMostrarPaises"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Info_pulsado."
+        android:textStyle="italic">
+    </TextView>
+
+
 
 </RelativeLayout>
