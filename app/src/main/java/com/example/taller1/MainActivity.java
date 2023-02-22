@@ -3,6 +3,7 @@ package com.example.taller1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             counter_paises++;
             actualizarInfoPulsado_paises();
             guardarFecha_paises();
+            Intent intent = new Intent(this, ListaPaisesActivity.class);
+            startActivity(intent);
         });
     }
 
