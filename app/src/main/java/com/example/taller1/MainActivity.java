@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         mostrarFecha_paises();
     }
 
+    @SuppressLint("SetTextI18n")
     private void mostrarFecha_paises() {
         String fechaGuardada = prefs.getString("fecha_ultimo_click", "Nunca");
         binding.infoUltimaVezPaises.setText("Usado por ultima ves el  " + fechaGuardada+".");
