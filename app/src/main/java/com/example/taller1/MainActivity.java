@@ -1,10 +1,15 @@
 package com.example.taller1;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+
 import com.example.taller1.databinding.ActivityMainBinding;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -12,17 +17,13 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    //JEJEJE
     private ActivityMainBinding binding;
     private SharedPreferences prefs;
     private int counter_juego = 0;
     private int counter_paises = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prefs = getPreferences(MODE_PRIVATE);
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             actualizarInfoPulsado_juego();
             guardarFecha_juego();
         });
+
         binding.btnMostrarPaises.setOnClickListener(view -> {
             counter_paises++;
             actualizarInfoPulsado_paises();
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+
 
     private void actualizarInfoPulsado_paises() {
         if (counter_paises  == 1)
@@ -68,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         mostrarFecha_paises();
     }
 
-    @SuppressLint("SetTextI18n")
     private void mostrarFecha_paises() {
         String fechaGuardada = prefs.getString("fecha_ultimo_click", "Nunca");
         binding.infoUltimaVezPaises.setText("Usado por ultima ves el  " + fechaGuardada+".");
@@ -88,5 +91,11 @@ public class MainActivity extends AppCompatActivity {
         else if (counter_juego > 1){
             binding.InfoPulsadoJuego.setText("El boton ha sido pulsado " + counter_juego + " veces.");
         }
+    }
+
+    public void StartGame(View view) {
+    }
+
+    public void mostrarPaisses(View view) {
     }
 }

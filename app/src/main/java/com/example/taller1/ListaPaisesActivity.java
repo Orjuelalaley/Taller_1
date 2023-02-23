@@ -38,13 +38,11 @@ public class ListaPaisesActivity extends AppCompatActivity {
             binding.listViewPaises.setOnItemClickListener((parent, view, position, id) -> {
                 try {
                     JSONObject pais = archivo.getCountries().getJSONObject(position);
-                   AlertUtils.shortToast(this, pais.getString("Region")+ " " + pais.getString("NativeName"));
+                    AlertUtils.shortToast(this, pais.getString("Region")+ " " + pais.getString("NativeName"));
                     String nombreEnIngles = pais.optString("Name");
                     String codigoIso = pais.optString("Alpha2Code");
                     String Region = pais.optString("Region");
-                    InfoPaisesActivity countryInfo = new InfoPaisesActivity(nombreEnIngles, codigoIso, Region);
                     Intent intent = new Intent(this, InfoPaisesActivity.class);
-                    intent.putExtra("countryInfo", String.valueOf(countryInfo));
                     startActivity(intent);
                 } catch (Exception ex) {
                     System.err.println("error: " + ex.getMessage());
