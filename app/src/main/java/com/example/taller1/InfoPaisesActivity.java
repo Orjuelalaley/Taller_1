@@ -10,6 +10,10 @@ import com.example.taller1.databinding.ActivityInfoPaisesBinding;
 public class InfoPaisesActivity extends AppCompatActivity {
     ActivityInfoPaisesBinding binding = ActivityInfoPaisesBinding.inflate(getLayoutInflater());
 
+    private String nombrePais;
+    private String Sigla;
+    private String NombreInternacional;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

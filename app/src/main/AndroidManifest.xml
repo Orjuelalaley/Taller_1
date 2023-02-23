@@ -16,8 +16,8 @@
         <activity
             android:name=".ListaPaisesActivity"
             android:exported="true" />
-        <activity android:name=".InfoPaisesActivity" />
-
+        <activity android:name=".InfoPaisesActivity"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -38,9 +38,9 @@ public class ListaPaisesActivity extends AppCompatActivity {
             binding.listViewPaises.setOnItemClickListener((parent, view, position, id) -> {
                 try {
                     JSONObject pais = archivo.getCountries().getJSONObject(position);
-                   AlertUtils.shortToast(this, pais.getString("NativeName"));
+                   AlertUtils.shortToast(this, pais.getString("Region")+ " " + pais.getString("NativeName"));
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    System.err.println("error: " + ex.getMessage());
                 }
             });
         } catch (Exception ex) {
