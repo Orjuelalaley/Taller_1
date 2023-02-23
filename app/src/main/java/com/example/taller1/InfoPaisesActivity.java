@@ -21,4 +21,33 @@ public class InfoPaisesActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
+    public InfoPaisesActivity(String nombrePais, String sigla, String nombreInternacional) {
+        this.nombrePais = nombrePais;
+        this.Sigla = sigla;
+        this.NombreInternacional = nombreInternacional;
+    }
+
+    public String getNombrePais() {
+        return nombrePais;
+    }
+
+    public void setNombrePais(String nombrePais) {
+        this.nombrePais = nombrePais;
+    }
+
+    public String getSigla() {
+        return Sigla;
+    }
+
+    public void setSigla(String sigla) {
+        Sigla = sigla;
+    }
+
+    public String getNombreInternacional() {
+        return NombreInternacional;
+    }
+
+    public void setNombreInternacional(String nombreInternacional) {
+        NombreInternacional = nombreInternacional;
+    }
 }
