@@ -3,51 +3,41 @@ package com.example.taller1;
 import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.taller1.databinding.ActivityInfoPaisesBinding;
+import com.example.taller1.utils.AlertUtils;
+
+import java.util.Set;
 
 public class InfoPaisesActivity extends AppCompatActivity {
 
-    private String nombrePais;
-    private String Sigla;
-    private String NombreInternacional;
+    ActivityInfoPaisesBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_paises);
+        String  nombre = getIntent().getExtras().getString("nombre");
+        String region = getIntent().getExtras().getString("Region");
+        String codigo = getIntent().getExtras().getString("Codigo");
+        String IMG = getIntent().getExtras().getString("FlagPng");
+        binding = ActivityInfoPaisesBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        SetInfo(nombre,region,codigo,IMG);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Información del país");
     }
-    public InfoPaisesActivity() {
-    }
-
-    public InfoPaisesActivity(String nombrePais, String sigla, String nombreInternacional) {
-        this.nombrePais = nombrePais;
-        this.Sigla = sigla;
-        this.NombreInternacional = nombreInternacional;
-    }
-
-    public String getNombrePais() {
-        return nombrePais;
-    }
-
-    public void setNombrePais(String nombrePais) {
-        this.nombrePais = nombrePais;
+    public InfoPaisesActivity(){
     }
 
-    public String getSigla() {
-        return Sigla;
+    public void SetInfo(String nombre, String region, String codigo,String IMG){
+        binding.namePais.setText(nombre);
+        binding.regionPais.setText(region);
+        binding.code.setText(codigo);
+        binding.flagUrl.setText(IMG);
     }
 
-    public void setSigla(String sigla) {
-        Sigla = sigla;
-    }
-
-    public String getNombreInternacional() {
-        return NombreInternacional;
-    }
-
-    public void setNombreInternacional(String nombreInternacional) {
-        NombreInternacional = nombreInternacional;
-    }
 }

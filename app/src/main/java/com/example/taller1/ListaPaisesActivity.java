@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.taller1.data.CountriesFromJson;
 import com.example.taller1.databinding.ActivityListaPaisesBinding;
-import com.example.taller1.utils.AlertUtils;
 
 import org.json.JSONObject;
 
@@ -23,6 +23,9 @@ public class ListaPaisesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_paises);
         com.example.taller1.databinding.ActivityListaPaisesBinding binding = ActivityListaPaisesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setTitle("Lista de paises");
 
         try {
             CountriesFromJson archivo = new CountriesFromJson();
@@ -38,11 +41,15 @@ public class ListaPaisesActivity extends AppCompatActivity {
             binding.listViewPaises.setOnItemClickListener((parent, view, position, id) -> {
                 try {
                     JSONObject pais = archivo.getCountries().getJSONObject(position);
-                    AlertUtils.shortToast(this, pais.getString("Region")+ " " + pais.getString("NativeName"));
                     String nombreEnIngles = pais.optString("Name");
                     String codigoIso = pais.optString("Alpha2Code");
                     String Region = pais.optString("Region");
+                    String FlagPng = pais.optString("FlagPng");
                     Intent intent = new Intent(this, InfoPaisesActivity.class);
+                    intent.putExtra("nombre",nombreEnIngles);
+                    intent.putExtra("Region",Region);
+                    intent.putExtra("Codigo",codigoIso);
+                    intent.putExtra("FlagPng",FlagPng);
                     startActivity(intent);
                 } catch (Exception ex) {
                     System.err.println("error: " + ex.getMessage());

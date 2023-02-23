@@ -17,7 +17,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    //JEJEJE
     private ActivityMainBinding binding;
     private SharedPreferences prefs;
     private int counter_juego = 0;
