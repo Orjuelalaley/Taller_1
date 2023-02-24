@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller1"
         tools:targetApi="31">
+        <activity android:name=".SorpresaActivity"
+            android:exported="true"/>
+        <activity android:name=".JuegoActivity"
+            android:exported="true"/>
         <activity
             android:name=".ListaPaisesActivity"
             android:exported="true" />

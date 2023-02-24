@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             counter_juego++;
             actualizarInfoPulsado_juego();
             guardarFecha_juego();
+            Intent intent = new Intent(this, JuegoActivity.class);
+            startActivity(intent);
         });
 
         binding.btnMostrarPaises.setOnClickListener(view -> {
@@ -100,9 +102,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void StartGame(View view) {
-    }
-
-    public void mostrarPaisses(View view) {
-    }
 }
