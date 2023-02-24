@@ -1,20 +1,21 @@
 package com.example.taller1;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
+import android.webkit.WebViewClient;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.taller1.databinding.ActivityInfoPaisesBinding;
-import com.example.taller1.utils.AlertUtils;
-
-import java.util.Set;
 
 public class InfoPaisesActivity extends AppCompatActivity {
 
     ActivityInfoPaisesBinding binding;
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,19 +26,22 @@ public class InfoPaisesActivity extends AppCompatActivity {
         String IMG = getIntent().getExtras().getString("FlagPng");
         binding = ActivityInfoPaisesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        SetInfo(nombre,region,codigo,IMG);
+        SetInfo(nombre,codigo,region,IMG);
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle("Información del país");
+        actionBar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.grey)));
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.grey));
     }
     public InfoPaisesActivity(){
     }
 
-    public void SetInfo(String nombre, String region, String codigo,String IMG){
+    @SuppressLint("SetJavaScriptEnabled")
+    public void SetInfo(String nombre, String codigo,String region, String IMG){
         binding.namePais.setText(nombre);
-        binding.regionPais.setText(region);
-        binding.code.setText(codigo);
-        binding.flagUrl.setText(IMG);
+        binding.siglaInfo.setText(codigo);
+        binding.regionInfo.setText(region);
+        Glide.with(this).load(IMG).into(binding.Imageview);
     }
 
 }

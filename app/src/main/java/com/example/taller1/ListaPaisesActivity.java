@@ -1,11 +1,14 @@
 package com.example.taller1;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.taller1.data.CountriesFromJson;
 import com.example.taller1.databinding.ActivityListaPaisesBinding;
@@ -26,6 +29,8 @@ public class ListaPaisesActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle("Lista de paises");
+        actionBar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.Cyan)));
+
 
         try {
             CountriesFromJson archivo = new CountriesFromJson();
@@ -42,12 +47,12 @@ public class ListaPaisesActivity extends AppCompatActivity {
                 try {
                     JSONObject pais = archivo.getCountries().getJSONObject(position);
                     String nombreEnIngles = pais.optString("Name");
+                    String region = pais.optString("Region");
                     String codigoIso = pais.optString("Alpha2Code");
-                    String Region = pais.optString("Region");
                     String FlagPng = pais.optString("FlagPng");
                     Intent intent = new Intent(this, InfoPaisesActivity.class);
                     intent.putExtra("nombre",nombreEnIngles);
-                    intent.putExtra("Region",Region);
+                    intent.putExtra("Region",region);
                     intent.putExtra("Codigo",codigoIso);
                     intent.putExtra("FlagPng",FlagPng);
                     startActivity(intent);

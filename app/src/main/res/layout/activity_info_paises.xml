@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="true"
-    android:gravity="center"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".InfoPaisesActivity">
 
+        <ImageView
+            android:id="@+id/Imageview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            tools:ignore="ContentDescription">
+        </ImageView>
+
+
         <TextView
-            android:id="@+id/name_pais"
+            android:id="@+id/namePais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Name"
+            android:layout_below="@id/Imageview"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/info_pais"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/region_pais"
+            android:id="@+id/siglaInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/name_pais"
-            android:layout_marginTop="37dp"
-            android:layout_marginEnd="-148dp"
-            android:layout_toStartOf="@+id/name_pais"
-            android:gravity="center"
-            android:text="region pais"
+            android:layout_below="@id/namePais"
+            android:layout_alignStart="@+id/namePais"
+            android:layout_marginTop="40dp"
+            android:text="@string/info_sigla"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/code"
+            android:id="@+id/regionInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/region_pais"
-            android:layout_marginTop="43dp"
-            android:gravity="center"
-            android:text="Code"
+            android:layout_below="@id/siglaInfo"
+            android:layout_alignStart="@+id/namePais"
+            android:layout_marginTop="40dp"
+            android:text="@string/info_región"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/flag_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/name_pais"
-            android:layout_marginBottom="100dp"
-            android:gravity="center"
-            android:text="FLAG URL"
-            android:textSize="30sp" />
 </RelativeLayout>
