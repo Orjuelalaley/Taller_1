@@ -47,11 +47,13 @@ public class ListaPaisesActivity extends AppCompatActivity {
                 try {
                     JSONObject pais = archivo.getCountries().getJSONObject(position);
                     String nombreEnIngles = pais.optString("Name");
+                    String namePais_internacional = pais.optString("NativeName");
                     String region = pais.optString("Region");
                     String codigoIso = pais.optString("Alpha2Code");
                     String FlagPng = pais.optString("FlagPng");
                     Intent intent = new Intent(this, InfoPaisesActivity.class);
                     intent.putExtra("nombre",nombreEnIngles);
+                    intent.putExtra("namePais_internacional",namePais_internacional);
                     intent.putExtra("Region",region);
                     intent.putExtra("Codigo",codigoIso);
                     intent.putExtra("FlagPng",FlagPng);

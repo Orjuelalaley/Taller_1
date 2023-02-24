@@ -6,6 +6,7 @@
     android:baselineAligned="true"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:background="@color/grey"
     tools:context=".InfoPaisesActivity">
 
         <ImageView
@@ -28,12 +29,22 @@
             android:layout_marginTop="55dp"
             android:text="@string/info_pais"
             android:textSize="30sp" />
+        <TextView
+            android:id="@+id/namePais_internacional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/namePais"
+            android:layout_alignStart="@+id/namePais"
+            android:layout_marginTop="40dp"
+            android:text="@string/info_pais_internacional"
+            android:textSize="30sp"
+            />
 
         <TextView
             android:id="@+id/siglaInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/namePais"
+            android:layout_below="@id/namePais_internacional"
             android:layout_alignStart="@+id/namePais"
             android:layout_marginTop="40dp"
             android:text="@string/info_sigla"
