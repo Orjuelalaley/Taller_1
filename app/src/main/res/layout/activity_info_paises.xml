@@ -3,21 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:baselineAligned="true"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     android:background="@color/grey"
     tools:context=".InfoPaisesActivity">
 
-        <ImageView
-            android:id="@+id/Imageview"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="40dp"
-            tools:ignore="ContentDescription">
-        </ImageView>
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/Imageview"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/RoundedImageViewOverlay"
+            tools:ignore="ContentDescription">
+
+        </com.google.android.material.imageview.ShapeableImageView>
 
         <TextView
             android:id="@+id/namePais"

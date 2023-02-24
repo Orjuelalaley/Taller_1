@@ -19,4 +19,8 @@
         <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="s">300</item>
         <item name="postSplashScreenTheme">@style/Theme.SplashScreen</item>
     </style>
+    <style name="RoundedImageViewOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2%</item>
+        ></style>
 </resources>
