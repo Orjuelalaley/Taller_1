@@ -99,10 +99,4 @@ public class MainActivity extends AppCompatActivity {
             binding.InfoPulsadoJuego.setText("El boton ha sido pulsado " + counter_juego + " veces.");
         }
     }
-
-    public void StartGame(View view) {
-    }
-
-    public void mostrarPaisses(View view) {
-    }
 }
